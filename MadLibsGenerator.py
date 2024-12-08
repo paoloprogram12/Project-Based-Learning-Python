@@ -19,4 +19,16 @@ for i, char in enumerate(story): # gives access to the position and the element 
         words.add(word) # adds word into words list
         startOfWord = -1 # resets the start of words
 
-print(words)
+# dictionary sets the unique words and creates values for them
+answers = {}
+
+# puts all the variables in the dictionary of unique words
+for word in words:
+    answer = input("Enter a word for " + word + ": ")
+    answers[word] = answer
+
+# replaces every word from the story variable containing <> to the words from the dictionary
+for word in words:
+    story = story.replace(word, answers[word]) # built in python function to replace words within an array
+
+print(story)
