@@ -5,16 +5,20 @@ import random
 number = random.randint(1, 100)
 
 while True:
+    try: # try and except handles if the input isn't a number
+        theGuess = int(input("Guess the number between 1 and 100: "))
 
-    theGuess = int(input("Guess the number between 1 and 100: "))
-    guess = int(theGuess) # to convert theGuess into a int
+        if theGuess < number:
+            print("Too Low!")
+        elif theGuess > number:
+            print("Too High!")
+        else:
+            print("Congratulations! You have guessed " + str(number) + "!")
+            break
 
-    if guess == number:
-        print("Congratulations! You have guessed " + str(number) + "!") # to convert number into a string
-        print("Thanks for playing!")
-        break
-    elif guess > 100 or guess < 1:
-        print("Invalid Number, Try Again!")
-    elif guess >= 1 and guess <= 100 and guess != number:
-        print("Wrong Number! Try Again!")
+    except ValueError:
+        print("Please Enter a Valid Number.")
+    # guess = int(theGuess) # to convert theGuess into a int
+
+
         
