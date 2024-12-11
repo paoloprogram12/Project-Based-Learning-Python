@@ -35,7 +35,7 @@ for i in range(TOTAL_PROBLEMS):
         wrong += 1
 
 endTime = time.time()
-totalTime = endTime - startTime
+totalTime = round(endTime - startTime, 2)
 
 print("----------------------")
 print("Nice work! You finished in", totalTime, "seconds!")
